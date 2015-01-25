@@ -119,4 +119,26 @@ if [ $opcao -eq 1 ] ; then
     mv ~/emacs.d.el ~/.emacs.d
 fi
 
+echo -------------------------------------------------------------------
+echo Clonar repositorios ess.el, r-autoyas.el e outros? [ 1/0 ]
+echo -------------------------------------------------------------------
+read opcao
+if [ $opcao -eq 1 ] ; then
+    echo
+    git clone https://github.com/mlf176f2/r-autoyas.el.git \
+	~/.emacs.d/r-autoyas
+    echo
+    echo Clonando r-autoyas
+    echo
+    git clone git@github.com:vitoshka/polymode.git ~/.emacs.d/polymode
+    echo
+    echo Clonando polymode
+    echo
+    git clone --recursive https://github.com/capitaomorte/yasnippet \
+	~/.emacs.d/yasnippet
+    echo
+    echo Clonando yasnippet
+    echo
+fi
+
 exit
